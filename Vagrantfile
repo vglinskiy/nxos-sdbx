@@ -3,7 +3,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "nxos" do |nxos|
     nxos.vm.box = "nxos-sdbx"
     nxos.ssh.insert_key = false
-    nxos.vm.boot_timeout = 180
+    nxos.vm.boot_timeout = 600
     nxos.vm.synced_folder '.', '/vagrant', disabled: true
     nxos.vm.network :forwarded_port, guest: 80, host: 8980, id: 'http'
     nxos.vm.network :forwarded_port, guest: 22, host: 5522, id: 'ssh'
